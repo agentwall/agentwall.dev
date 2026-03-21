@@ -4,20 +4,158 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AgentWall — MCP security for AI agents</title>
+  <meta name="description" content="Policy-enforcing MCP proxy that blocks dangerous tool calls before they execute. Works with Claude Desktop, Cursor, Windsurf, OpenClaw.">
+  <meta property="og:title" content="AgentWall — MCP security for AI agents">
+  <meta property="og:description" content="Claude said always allow. AgentWall blocked it anyway.">
+  <meta property="og:image" content="https://github.com/agentwall/Agentwall/raw/main/assets/demo.gif">
+  <meta property="og:url" content="https://agentwall.dev">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
   <style>
-    body { font-family: -apple-system, sans-serif; max-width: 680px; margin: 80px auto; padding: 0 24px; color: #1a1a1a; }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      max-width: 680px;
+      margin: 80px auto;
+      padding: 0 24px;
+      color: #1a1a1a;
+    }
     h1 { font-size: 2rem; margin-bottom: 8px; }
-    .hook { font-size: 1.2rem; color: #555; margin-bottom: 32px; }
-    .install { background: #f4f4f4; padding: 16px 20px; border-radius: 8px; font-family: monospace; font-size: 1rem; margin-bottom: 32px; }
-    .clients { color: #555; margin-bottom: 40px; }
-    .btn { display: inline-block; background: #1a1a1a; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 500; }
+    .badge { margin-bottom: 20px; display: block; }
+    .hook { font-size: 1.2rem; color: #555; margin-bottom: 28px; line-height: 1.5; }
+    .demo {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 32px;
+      border: 1px solid #e5e5e5;
+      display: block;
+    }
+    .install {
+      background: #f4f4f4;
+      padding: 16px 20px;
+      border-radius: 8px;
+      font-family: 'SFMono-Regular', Consolas, monospace;
+      font-size: 1rem;
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .copy-btn {
+      background: none;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 12px;
+      cursor: pointer;
+      color: #555;
+      flex-shrink: 0;
+    }
+    .copy-btn:hover { background: #eee; }
+    .clients { color: #555; margin-bottom: 40px; font-size: 0.95rem; }
+    .btn {
+      display: inline-block;
+      background: #1a1a1a;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      margin-right: 12px;
+      margin-bottom: 12px;
+    }
+    .btn-outline {
+      display: inline-block;
+      background: transparent;
+      color: #1a1a1a;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      border: 1.5px solid #1a1a1a;
+      margin-bottom: 12px;
+    }
+    .feature-list {
+      margin: 48px 0 0;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid #eee;
+      padding-top: 32px;
+    }
+    .feature-list li {
+      padding: 8px 0;
+      color: #444;
+      font-size: 0.95rem;
+      display: flex;
+      gap: 10px;
+    }
+    .feature-list li::before {
+      content: '→';
+      color: #999;
+      flex-shrink: 0;
+    }
+    footer {
+      margin-top: 64px;
+      padding-top: 24px;
+      border-top: 1px solid #eee;
+      color: #999;
+      font-size: 0.85rem;
+    }
+    footer a { color: #999; }
   </style>
 </head>
 <body>
+
   <h1>AgentWall</h1>
-  <p class="hook">Claude said "always allow."<br>AgentWall blocked it anyway.</p>
-  <div class="install">npx @agentwall/agentwall setup</div>
+
+  <a class="badge" href="https://github.com/agentwall/Agentwall">
+    <img src="https://img.shields.io/github/stars/agentwall/agentwall?style=social" alt="GitHub stars">
+  </a>
+
+  <p class="hook">
+    Claude said "always allow."<br>
+    AgentWall blocked it anyway.
+  </p>
+
+  <img
+    class="demo"
+    src="https://github.com/agentwall/Agentwall/raw/main/assets/demo.gif"
+    alt="AgentWall blocking a dangerous MCP tool call"
+  >
+
+  <div class="install">
+    <span>npx @agentwall/agentwall setup</span>
+    <button class="copy-btn" onclick="copyInstall(this)">Copy</button>
+  </div>
+
   <p class="clients">Works with Claude Desktop · Cursor · Windsurf · OpenClaw</p>
-  <a class="btn" href="https://github.com/agentwall/agentwall">View on GitHub →</a>
+
+  <a class="btn" href="https://github.com/agentwall/Agentwall">View on GitHub →</a>
+  <a class="btn-outline" href="https://github.com/agentwall/Agentwall#readme">Read the docs →</a>
+
+  <ul class="feature-list">
+    <li>Blocks dangerous tool calls before they execute — credentials, shell, database drops</li>
+    <li>YAML policy engine — deny, allow, ask with glob matching and SQL content rules</li>
+    <li>Browser approval UI at localhost:7823 — works in GUI clients with no terminal</li>
+    <li>Independent audit log — ground truth record of every tool call</li>
+    <li>Hot-reload — edit policy.yaml and changes apply instantly, no restart needed</li>
+    <li>Fully reversible — agentwall undo restores all original configs in one command</li>
+  </ul>
+
+  <footer>
+    <a href="https://github.com/agentwall/Agentwall">GitHub</a> ·
+    <a href="https://github.com/agentwall/Agentwall/blob/main/LICENSE">Apache 2.0</a>
+  </footer>
+
+  <script>
+    function copyInstall(btn) {
+      navigator.clipboard.writeText('npx @agentwall/agentwall setup');
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = 'Copy', 2000);
+    }
+  </script>
+
 </body>
 </html>
