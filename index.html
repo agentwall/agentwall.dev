@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AgentWall - MCP security for AI agents</title>
-  <meta name="description" content="Policy-enforcing MCP proxy that blocks dangerous tool calls before they execute. Works with Claude Desktop, Cursor, Windsurf, OpenClaw.">
-  <meta property="og:title" content="AgentWall - MCP security for AI agents">
-  <meta property="og:description" content="Your AI agent just approved a dangerous tool call. AgentWall blocked it anyway.">
+  <title>AgentWall: Stop your AI agent before it goes too far</title>
+  <meta name="description" content="Policy-enforcing MCP proxy that blocks dangerous tool calls before they execute. The security layer for OpenClaw, Claude Desktop, Cursor, and Windsurf.">
+  <meta property="og:title" content="AgentWall: MCP security for AI agents">
+  <meta property="og:description" content="OpenClaw and Claude said always allow. AgentWall blocked it anyway.">
   <meta property="og:image" content="https://github.com/agentwall/Agentwall/raw/main/assets/demo.gif">
   <meta property="og:url" content="https://agentwall.dev">
   <meta name="twitter:card" content="summary_large_image">
@@ -21,7 +21,18 @@
       padding: 0 24px;
       color: #1a1a1a;
     }
-    h1 { font-size: 2rem; margin-bottom: 8px; }
+    .title-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 8px;
+    }
+    .title-row img {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+    }
+    h1 { font-size: 2rem; margin: 0; }
     .badge { margin-bottom: 20px; display: block; }
     .hook { font-size: 1.2rem; color: #555; margin-bottom: 28px; line-height: 1.5; }
     .demo {
@@ -37,7 +48,7 @@
       border-radius: 8px;
       font-family: 'SFMono-Regular', Consolas, monospace;
       font-size: 1rem;
-      margin-bottom: 32px;
+      margin-bottom: 28px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -54,7 +65,30 @@
       flex-shrink: 0;
     }
     .copy-btn:hover { background: #eee; }
-    .clients { color: #555; margin-bottom: 40px; font-size: 0.95rem; }
+    .clients-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #999;
+      margin-bottom: 10px;
+    }
+    .clients-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 36px;
+    }
+    .client-badge {
+      display: inline-flex;
+      align-items: center;
+      background: #f4f4f4;
+      border: 1px solid #e0e0e0;
+      border-radius: 99px;
+      padding: 6px 16px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #1a1a1a;
+    }
     .btn {
       display: inline-block;
       background: #1a1a1a;
@@ -108,14 +142,17 @@
 </head>
 <body>
 
-  <h1>AgentWall</h1>
+  <div class="title-row">
+    <img src="logo.png" alt="AgentWall logo">
+    <h1>AgentWall</h1>
+  </div>
 
   <a class="badge" href="https://github.com/agentwall/Agentwall">
     <img src="https://img.shields.io/github/stars/agentwall/agentwall?style=social" alt="GitHub stars">
   </a>
 
   <p class="hook">
-    Your AI agent just approved a dangerous tool call.<br>
+    OpenClaw and Claude said "always allow."<br>
     AgentWall blocked it anyway.
   </p>
 
@@ -130,18 +167,27 @@
     <button class="copy-btn" onclick="copyInstall(this)">Copy</button>
   </div>
 
-  <p class="clients">Works with Claude Desktop · Cursor · Windsurf · OpenClaw</p>
+  <p class="clients-label">Works with</p>
+  <div class="clients-row">
+    <span class="client-badge">OpenClaw</span>
+    <span class="client-badge">Claude Desktop</span>
+    <span class="client-badge">Cursor</span>
+    <span class="client-badge">Windsurf</span>
+    <span class="client-badge">Claude Code</span>
+    <span class="client-badge">Any MCP client</span>
+  </div>
 
   <a class="btn" href="https://github.com/agentwall/Agentwall">View on GitHub →</a>
   <a class="btn-outline" href="https://github.com/agentwall/Agentwall#readme">Read the docs →</a>
 
   <ul class="feature-list">
-    <li>Blocks dangerous tool calls before they execute - credentials, shell, database drops</li>
-    <li>YAML policy engine - deny, allow, ask with glob matching and SQL content rules</li>
-    <li>Browser approval UI at localhost:7823 - works in GUI clients with no terminal</li>
-    <li>Independent audit log - ground truth record of every tool call</li>
-    <li>Hot-reload - edit policy.yaml and changes apply instantly, no restart needed</li>
-    <li>Fully reversible - agentwall undo restores all original configs in one command</li>
+    <li>Blocks dangerous tool calls before they execute. Credentials, shell commands, database drops.</li>
+    <li>YAML policy engine with deny, allow, ask. Glob matching and SQL content rules.</li>
+    <li>Browser approval UI at localhost:7823. Works in GUI clients with no terminal.</li>
+    <li>Independent audit log. Ground truth record of every tool call.</li>
+    <li>Hot-reload. Edit policy.yaml and changes apply instantly, no restart needed.</li>
+    <li>Fully reversible. agentwall undo restores all original configs in one command.</li>
+    <li>Works with OpenClaw via native plugin intercepting every tool call before it runs.</li>
   </ul>
 
   <footer>
