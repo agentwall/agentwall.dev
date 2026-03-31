@@ -47,7 +47,6 @@
       overflow-x: hidden;
     }
 
-    /* noise texture overlay */
     body::before {
       content: '';
       position: fixed;
@@ -92,11 +91,7 @@
       gap: 10px;
       text-decoration: none;
     }
-    .nav-logo img {
-      width: 28px;
-      height: 28px;
-      border-radius: 6px;
-    }
+    .nav-logo img { width: 28px; height: 28px; border-radius: 6px; }
     .nav-logo span {
       font-family: var(--display);
       font-size: 1.05rem;
@@ -132,9 +127,7 @@
     .nav-star:hover { border-color: var(--text3); color: var(--text); }
 
     /* ── HERO ── */
-    .hero {
-      padding: 56px 0 36px;
-    }
+    .hero { padding: 56px 0 36px; }
 
     .threat-banner {
       display: inline-flex;
@@ -171,12 +164,7 @@
       margin-bottom: 18px;
       animation: fadeSlideDown 0.5s 0.05s ease both;
     }
-
-    h1 .blocked {
-      color: var(--red);
-      position: relative;
-      display: inline-block;
-    }
+    h1 .blocked { color: var(--red); position: relative; display: inline-block; }
 
     .subhead {
       font-size: 1.05rem;
@@ -248,17 +236,8 @@
       border-radius: 10px;
       padding: 14px 18px;
     }
-    .install-cmd {
-      font-family: var(--mono);
-      font-size: 0.95rem;
-      color: var(--green);
-    }
-    .install-sub {
-      font-size: 0.78rem;
-      color: var(--text3);
-      margin-top: 8px;
-      font-family: var(--mono);
-    }
+    .install-cmd { font-family: var(--mono); font-size: 0.95rem; color: var(--green); }
+    .install-sub { font-size: 0.78rem; color: var(--text3); margin-top: 8px; font-family: var(--mono); }
     .copy-btn {
       background: var(--surface2);
       border: 1px solid var(--border2);
@@ -285,11 +264,7 @@
       color: var(--text3);
       margin-bottom: 12px;
     }
-    .clients-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
+    .clients-row { display: flex; flex-wrap: wrap; gap: 8px; }
     .client-pill {
       display: inline-flex;
       align-items: center;
@@ -325,11 +300,7 @@
     }
 
     /* ── DIVIDER ── */
-    .section-divider {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 0 0 36px;
-    }
+    .section-divider { border: none; border-top: 1px solid var(--border); margin: 0 0 36px; }
 
     /* ── FEATURES ── */
     .features-header {
@@ -339,17 +310,13 @@
       margin-bottom: 20px;
       color: var(--text);
     }
-
     .feature-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 10px;
       margin-bottom: 40px;
     }
-
-    @media (max-width: 520px) {
-      .feature-grid { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 520px) { .feature-grid { grid-template-columns: 1fr; } }
 
     .feature-card {
       background: var(--surface);
@@ -357,19 +324,16 @@
       border-radius: 10px;
       padding: 18px 20px;
       transition: border-color 0.2s;
-    }
-    .feature-card:hover { border-color: var(--border2); }
-    .feature-card.danger {
-      border-color: rgba(255,59,59,0.2);
-      background: var(--red-dim2);
-    }
-    .feature-card.danger:hover { border-color: rgba(255,59,59,0.35); }
-
-    .feature-icon {
-      font-size: 1.1rem;
-      margin-bottom: 10px;
+      text-decoration: none;
       display: block;
     }
+    .feature-card:hover { border-color: var(--border2); }
+    .feature-card.danger { border-color: rgba(255,59,59,0.2); background: var(--red-dim2); }
+    .feature-card.danger:hover { border-color: rgba(255,59,59,0.35); }
+    .feature-card.accent { border-color: rgba(0,196,122,0.2); background: rgba(0,196,122,0.04); }
+    .feature-card.accent:hover { border-color: rgba(0,196,122,0.4); }
+
+    .feature-icon { font-size: 1.1rem; margin-bottom: 10px; display: block; }
     .feature-title {
       font-family: var(--display);
       font-size: 0.92rem;
@@ -377,18 +341,23 @@
       margin-bottom: 6px;
       color: var(--text);
     }
-    .feature-desc {
-      font-size: 0.82rem;
-      color: var(--text2);
-      line-height: 1.55;
+    .feature-desc { font-size: 0.82rem; color: var(--text2); line-height: 1.55; }
+    .feature-link {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 0.78rem;
+      font-family: var(--mono);
+      color: var(--green);
+      text-decoration: none;
     }
+    .feature-link:hover { text-decoration: underline; }
 
     /* ── WHY ── */
     .why-section {
       background: var(--surface);
       border: 1px solid var(--border2);
       border-radius: 12px;
-      padding: 24px 24px;
+      padding: 24px;
       margin-bottom: 16px;
     }
     .why-label {
@@ -399,17 +368,11 @@
       color: var(--red);
       margin-bottom: 12px;
     }
-    .why-text {
-      font-size: 1rem;
-      color: var(--text2);
-      line-height: 1.7;
-    }
+    .why-text { font-size: 1rem; color: var(--text2); line-height: 1.7; }
     .why-text strong { color: var(--text); }
 
     /* ── SOCIAL PROOF ── */
-    .proof-section {
-      margin-bottom: 40px;
-    }
+    .proof-section { margin-bottom: 40px; }
     .proof-label {
       font-size: 0.72rem;
       text-transform: uppercase;
@@ -417,11 +380,7 @@
       color: var(--text3);
       margin-bottom: 14px;
     }
-    .proof-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
+    .proof-row { display: flex; flex-wrap: wrap; gap: 10px; }
     .proof-badge {
       display: inline-flex;
       align-items: center;
@@ -451,9 +410,7 @@
       gap: 20px;
       flex-wrap: wrap;
     }
-    .blog-cta-text {
-      flex: 1;
-    }
+    .blog-cta-text { flex: 1; }
     .blog-cta-eyebrow {
       font-family: var(--mono);
       font-size: 0.7rem;
@@ -462,12 +419,7 @@
       color: var(--red);
       margin-bottom: 6px;
     }
-    .blog-cta-title {
-      font-family: var(--display);
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--text);
-    }
+    .blog-cta-title { font-family: var(--display); font-size: 1rem; font-weight: 700; color: var(--text); }
     .btn-red {
       display: inline-flex;
       align-items: center;
@@ -516,10 +468,9 @@
         <span>AgentWall</span>
       </a>
       <div class="nav-right">
+        <a class="nav-link" href="https://github.com/agentwall/agentwall-registry">Policy library</a>
         <a class="nav-link" href="https://github.com/agentwall/Agentwall#readme">Docs</a>
-        <a class="nav-star" href="https://github.com/agentwall/Agentwall">
-          ★ Star
-        </a>
+        <a class="nav-star" href="https://github.com/agentwall/Agentwall">★ Star</a>
       </div>
     </div>
   </nav>
@@ -545,12 +496,8 @@
       </p>
 
       <div class="hero-actions">
-        <a class="btn-primary" href="https://github.com/agentwall/Agentwall">
-          ★ Star on GitHub
-        </a>
-        <a class="btn-ghost" href="https://github.com/agentwall/Agentwall#readme">
-          Read the docs →
-        </a>
+        <a class="btn-primary" href="https://github.com/agentwall/Agentwall">★ Star on GitHub</a>
+        <a class="btn-ghost" href="https://github.com/agentwall/Agentwall#readme">Read the docs →</a>
       </div>
 
       <div class="install-wrap">
@@ -612,36 +559,56 @@
     <!-- FEATURES -->
     <div class="features-header">What AgentWall does</div>
     <div class="feature-grid">
+
       <div class="feature-card danger">
         <span class="feature-icon">🛑</span>
         <div class="feature-title">Blocks before execution</div>
         <div class="feature-desc">Credentials, shell commands, database drops — intercepted before they run.</div>
       </div>
+
       <div class="feature-card">
         <span class="feature-icon">📋</span>
         <div class="feature-title">YAML policy engine</div>
         <div class="feature-desc">deny, allow, or ask. Glob matching and SQL content rules. Hot-reload — no restarts.</div>
       </div>
+
       <div class="feature-card">
         <span class="feature-icon">🌐</span>
         <div class="feature-title">Browser approval UI</div>
         <div class="feature-desc">Review and approve tool calls at localhost:7823. No terminal required.</div>
       </div>
+
       <div class="feature-card">
         <span class="feature-icon">📒</span>
         <div class="feature-title">Independent audit log</div>
         <div class="feature-desc">Ground truth record of every tool call, written outside the agent's control.</div>
       </div>
+
       <div class="feature-card">
         <span class="feature-icon">🔌</span>
         <div class="feature-title">Native OpenClaw plugin</div>
         <div class="feature-desc">Intercepts every tool call before it runs. No patching the model's prompt.</div>
       </div>
+
       <div class="feature-card">
         <span class="feature-icon">↩️</span>
         <div class="feature-title">Fully reversible</div>
         <div class="feature-desc"><code style="font-family:var(--mono);font-size:0.82rem;color:var(--green)">agentwall undo</code> restores all original configs in one command.</div>
       </div>
+
+      <div class="feature-card">
+        <span class="feature-icon">🧪</span>
+        <div class="feature-title">Taint tracking</div>
+        <div class="feature-desc">Detects credential reads and blocks subsequent outbound calls. Stops multi-step exfiltration.</div>
+      </div>
+
+      <div class="feature-card accent">
+        <span class="feature-icon">📚</span>
+        <div class="feature-title">Policy library</div>
+        <div class="feature-desc">Community policies for gog, GitHub, 1Password, messaging, Homebrew, and more.</div>
+        <a class="feature-link" href="https://github.com/agentwall/agentwall-registry">Browse the registry →</a>
+      </div>
+
     </div>
 
     <!-- SOCIAL PROOF -->
@@ -654,8 +621,11 @@
         <a class="proof-badge" href="https://glama.ai">
           <span class="check">✓</span> Glama.ai
         </a>
-        <a class="proof-badge" href="#">
-          <span class="check">✓</span> Apache 2.0 open source
+        <a class="proof-badge" href="https://github.com/agentwall/agentwall-registry">
+          <span class="check">✓</span> Policy library
+        </a>
+        <a class="proof-badge" href="https://github.com/agentwall/Agentwall/blob/main/LICENSE">
+          <span class="check">✓</span> Apache 2.0
         </a>
       </div>
     </div>
@@ -665,6 +635,7 @@
       <span>© 2025 AgentWall</span>
       <div class="footer-links">
         <a href="https://github.com/agentwall/Agentwall">GitHub</a>
+        <a href="https://github.com/agentwall/agentwall-registry">Policy library</a>
         <a href="https://github.com/agentwall/Agentwall/blob/main/LICENSE">Apache 2.0</a>
         <a href="https://github.com/agentwall/Agentwall#readme">Docs</a>
       </div>
