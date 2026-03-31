@@ -133,7 +133,7 @@
 
     /* ── HERO ── */
     .hero {
-      padding: 80px 0 56px;
+      padding: 56px 0 36px;
     }
 
     .threat-banner {
@@ -164,11 +164,11 @@
 
     h1 {
       font-family: var(--display);
-      font-size: clamp(2rem, 5vw, 2.8rem);
+      font-size: clamp(1.75rem, 4vw, 2.2rem);
       font-weight: 800;
-      line-height: 1.15;
+      line-height: 1.2;
       letter-spacing: -0.02em;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       animation: fadeSlideDown 0.5s 0.05s ease both;
     }
 
@@ -304,7 +304,7 @@
 
     /* ── DEMO ── */
     .demo-section {
-      margin-bottom: 64px;
+      margin-bottom: 40px;
       animation: fadeSlideDown 0.5s 0.3s ease both;
     }
     .demo-label {
@@ -316,6 +316,8 @@
     }
     .demo {
       width: 100%;
+      max-height: 420px;
+      object-fit: cover;
       border-radius: 10px;
       border: 1px solid var(--border2);
       display: block;
@@ -326,7 +328,7 @@
     .section-divider {
       border: none;
       border-top: 1px solid var(--border);
-      margin: 0 0 56px;
+      margin: 0 0 36px;
     }
 
     /* ── FEATURES ── */
@@ -334,15 +336,15 @@
       font-family: var(--display);
       font-size: 1.3rem;
       font-weight: 700;
-      margin-bottom: 28px;
+      margin-bottom: 20px;
       color: var(--text);
     }
 
     .feature-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-bottom: 64px;
+      gap: 10px;
+      margin-bottom: 40px;
     }
 
     @media (max-width: 520px) {
@@ -386,8 +388,8 @@
       background: var(--surface);
       border: 1px solid var(--border2);
       border-radius: 12px;
-      padding: 28px 28px;
-      margin-bottom: 64px;
+      padding: 24px 24px;
+      margin-bottom: 16px;
     }
     .why-label {
       font-family: var(--mono);
@@ -406,7 +408,7 @@
 
     /* ── SOCIAL PROOF ── */
     .proof-section {
-      margin-bottom: 64px;
+      margin-bottom: 40px;
     }
     .proof-label {
       font-size: 0.72rem;
@@ -441,8 +443,8 @@
       border: 1px solid rgba(255,59,59,0.25);
       background: var(--red-dim2);
       border-radius: 12px;
-      padding: 24px 28px;
-      margin-bottom: 64px;
+      padding: 20px 24px;
+      margin-bottom: 40px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -516,8 +518,7 @@
       <div class="nav-right">
         <a class="nav-link" href="https://github.com/agentwall/Agentwall#readme">Docs</a>
         <a class="nav-star" href="https://github.com/agentwall/Agentwall">
-          ★ <img src="https://img.shields.io/github/stars/agentwall/agentwall?label=&color=transparent&style=flat" alt="stars" style="height:14px;vertical-align:middle;filter:invert(1) brightness(0.5);">
-          Star
+          ★ Star
         </a>
       </div>
     </div>
@@ -580,7 +581,10 @@
     <!-- DEMO -->
     <section class="demo-section">
       <div class="demo-label">See it in action</div>
-      <video class="demo" src="demo.mp4" autoplay loop muted playsinline></video>
+      <video class="demo" autoplay loop muted playsinline poster="https://github.com/agentwall/Agentwall/raw/main/assets/demo.gif">
+        <source src="demo.mp4" type="video/mp4">
+        <img class="demo" src="https://github.com/agentwall/Agentwall/raw/main/assets/demo.gif" alt="AgentWall demo">
+      </video>
     </section>
 
     <hr class="section-divider">
