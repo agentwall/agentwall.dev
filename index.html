@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AgentWall – Stop your AI agent before it goes too far</title>
-  <meta name="description" content="Your AI agent can read every credential on your machine. AgentWall blocks dangerous tool calls before they execute — independent of the runtime.">
+  <meta name="description" content="Your AI agent can read every credential on your machine. AgentWall blocks dangerous tool calls before they execute, independent of the runtime.">
   <meta property="og:title" content="AgentWall: MCP security for AI agents">
   <meta property="og:description" content="OpenClaw and Claude said always allow. AgentWall blocked it anyway.">
   <meta property="og:image" content="https://github.com/agentwall/Agentwall/raw/main/assets/demo.gif">
@@ -65,7 +65,7 @@
       z-index: 1;
     }
 
-    /* ── NAV ── */
+    /* NAV */
     nav {
       border-bottom: 1px solid var(--border);
       padding: 18px 0;
@@ -126,7 +126,7 @@
     }
     .nav-star:hover { border-color: var(--text3); color: var(--text); }
 
-    /* ── HERO ── */
+    /* HERO */
     .hero { padding: 56px 0 36px; }
 
     .threat-banner {
@@ -213,7 +213,7 @@
     }
     .btn-ghost:hover { border-color: var(--text3); color: var(--text); }
 
-    /* ── INSTALL ── */
+    /* INSTALL */
     .install-wrap {
       margin-bottom: 48px;
       animation: fadeSlideDown 0.5s 0.2s ease both;
@@ -252,7 +252,7 @@
     }
     .copy-btn:hover { color: var(--text); border-color: var(--text3); }
 
-    /* ── CLIENTS ── */
+    /* CLIENTS */
     .clients-section {
       margin-bottom: 56px;
       animation: fadeSlideDown 0.5s 0.25s ease both;
@@ -277,7 +277,7 @@
       color: var(--text2);
     }
 
-    /* ── DEMO ── */
+    /* DEMO */
     .demo-section {
       margin-bottom: 40px;
       animation: fadeSlideDown 0.5s 0.3s ease both;
@@ -299,10 +299,10 @@
       background: var(--surface);
     }
 
-    /* ── DIVIDER ── */
+    /* DIVIDER */
     .section-divider { border: none; border-top: 1px solid var(--border); margin: 0 0 36px; }
 
-    /* ── FEATURES ── */
+    /* FEATURES */
     .features-header {
       font-family: var(--display);
       font-size: 1.3rem;
@@ -352,7 +352,7 @@
     }
     .feature-link:hover { text-decoration: underline; }
 
-    /* ── WHY ── */
+    /* WHY */
     .why-section {
       background: var(--surface);
       border: 1px solid var(--border2);
@@ -371,7 +371,7 @@
     .why-text { font-size: 1rem; color: var(--text2); line-height: 1.7; }
     .why-text strong { color: var(--text); }
 
-    /* ── SOCIAL PROOF ── */
+    /* SOCIAL PROOF */
     .proof-section { margin-bottom: 40px; }
     .proof-label {
       font-size: 0.72rem;
@@ -397,7 +397,7 @@
     .proof-badge:hover { border-color: var(--text3); color: var(--text); }
     .proof-badge .check { color: var(--green); }
 
-    /* ── BLOG CTA ── */
+    /* BLOG CTA */
     .blog-cta {
       border: 1px solid rgba(255,59,59,0.25);
       background: var(--red-dim2);
@@ -436,7 +436,7 @@
     }
     .btn-red:hover { opacity: 0.85; }
 
-    /* ── FOOTER ── */
+    /* FOOTER */
     footer {
       border-top: 1px solid var(--border);
       padding: 28px 0 48px;
@@ -452,7 +452,7 @@
     footer a:hover { color: var(--text2); }
     .footer-links { display: flex; gap: 16px; }
 
-    /* ── ANIMATIONS ── */
+    /* ANIMATIONS */
     @keyframes fadeSlideDown {
       from { opacity: 0; transform: translateY(-10px); }
       to { opacity: 1; transform: translateY(0); }
@@ -491,7 +491,7 @@
       </h1>
 
       <p class="subhead">
-        A policy-enforcing MCP proxy that sits between your AI agent and its tools —
+        A policy-enforcing MCP proxy that sits between your AI agent and its tools,
         enforcing your rules <strong>outside the runtime</strong>, before any damage is done.
       </p>
 
@@ -540,7 +540,7 @@
     <div class="why-section">
       <div class="why-label">Why AgentWall</div>
       <p class="why-text">
-        MCP clients like OpenClaw have built-in safety prompts — but they run <strong>inside the runtime</strong>.
+        MCP clients like OpenClaw have built-in safety prompts but they run <strong>inside the runtime</strong>.
         A compromised tool, a poisoned prompt, or a misconfigured agent can bypass them entirely.
         AgentWall enforces policies <strong>independently</strong>, at the proxy layer, where neither the
         model nor the client can override it.
@@ -563,13 +563,13 @@
       <div class="feature-card danger">
         <span class="feature-icon">🛑</span>
         <div class="feature-title">Blocks before execution</div>
-        <div class="feature-desc">Credentials, shell commands, database drops — intercepted before they run.</div>
+        <div class="feature-desc">Credentials, shell commands, database drops. Intercepted before they run.</div>
       </div>
 
       <div class="feature-card">
         <span class="feature-icon">📋</span>
         <div class="feature-title">YAML policy engine</div>
-        <div class="feature-desc">deny, allow, or ask. Glob matching and SQL content rules. Hot-reload — no restarts.</div>
+        <div class="feature-desc">deny, allow, or ask. Glob matching and SQL content rules. Hot-reload, no restarts.</div>
       </div>
 
       <div class="feature-card">
